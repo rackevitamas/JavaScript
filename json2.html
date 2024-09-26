@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="json2.js"></script>
+    <title>Kurzusok és Diákok</title>
 </head>
 <body>
-    
+    <div class="adatok">
+        <div id="kurzusok">
+            <p>Meglévő kurzusok</p>
+            <ul id="kurzus"></ul>
+        </div>
+        <div id="diakok">
+            <p>Meglévő diákok</p>
+            <ul id="diak"></ul>
+        </div>
+    </div>
+    <div class="rendeles">
+        <div id="ujkurzus">
+            <form onsubmit="letrehozas(event)">
+                <label for="ujkur">Új kurzus létrehozása!</label>
+                <input type="text" id="ujkur" placeholder="Új kurzus" required>
+                <button type="submit">Létrehozás</button>
+            </form>
+        </div>
+        <div id="ujdiak">
+            <form onsubmit="letrehozasDiak(event)">
+                <label for="ujdia">Új diák létrehozása!</label>
+                <input type="text" id="ujdia" placeholder="Új diák" required>
+                <button type="submit">Létrehozás</button>
+            </form>
+        </div>
+    </div>
+    <div class="modositas">
+        <div id="levokurzus">
+            <form onsubmit="modositas(event)">
+                <label for="levokur">Meglévő kurzus módosítása/törlése!</label>
+                <input type="text" id="levokur" placeholder="Lévő kurzus" required>
+                <button type="submit">Módosítás</button>
+                <button type="button" onclick="torlesKurzus()">Törlés</button> <!-- Törlés gomb -->
+            </form>
+        </div>
+        <div id="levodiak">
+            <form onsubmit="modositasDiak(event)">
+                <label for="levodia">Meglévő diák módosítása/törlése!</label>
+                <input type="text" id="levodia" placeholder="Lévő diák" required>
+                <button type="submit">Módosítás</button>
+                <button type="button" onclick="torlesDiak()">Törlés</button> <!-- Törlés gomb -->
+            </form>
+        </div>
+    </div>    
+    <script src="json2.js"></script>
 </body>
 </html>
