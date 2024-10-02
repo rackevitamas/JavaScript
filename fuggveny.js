@@ -17,8 +17,8 @@ function muvelet(a, b, fuggveny){
 }
 /* const name = await input('Kérek egy nevet: ')
 console.log(name); */
-const sz1 = await input('Kérek egy számot!')
-const sz2 = await input('Kérek egy számot!')
+const sz1 = await input('Kérek egy számot: ');
+const sz2 = await input('Kérek egy számot: ');
 /* function add(a, b){
     return +a + +b;
 }
@@ -43,9 +43,39 @@ const divide = (a, b) => {
     }
     return a / b;
 }
-function fgveny(a, b, muvelet){
-
+const kisebb = (a, b) => {
+    if (a > b) {
+        return b;
+    }
+    return a;
+};
+const nagyobb = (a, b) => {
+    if (a > b) {
+        return a;
+    }
+    return b;
 }
+const negyzet_e = (a, b) =>  {
+    if (a == b) {
+        return "Négyzet!";
+    }
+    return "Téglalap!";
+}
+const kerulet = (a, b) => {
+    if (negyzet_e == "Négyzet!") {
+        return 4 * +a;
+    }
+    return 2 * (+a + +b);
+}
+const terulet = (a, b) => {
+    if (negyzet_e == "Négyzet!") {
+        return +a * +b;
+    }
+    return +a * +b;
+}
+
+
+
 let eredmeny = muvelet(sz1, sz2, add);
 console.log(eredmeny);
  eredmeny = muvelet(sz1, sz2, kivonas);
@@ -54,6 +84,29 @@ console.log(eredmeny);
 console.log(eredmeny);
  eredmeny = muvelet(sz1, sz2, divide);
 console.log(eredmeny);
+ eredmeny = muvelet(sz1, sz2, kisebb);
+console.log(eredmeny);
+ eredmeny = muvelet(sz1, sz2, nagyobb);
+console.log(eredmeny);
+ eredmeny = muvelet(sz1, sz2, negyzet_e);
+console.log(eredmeny);
+ eredmeny = muvelet(sz1, sz2, kerulet);
+console.log(eredmeny);
+ eredmeny = muvelet(sz1, sz2, terulet);
+console.log(eredmeny);
+
+const s1 = await input('Kérek egy számot: ');
+const s2 = await input('Kérek egy számot: ');
+const s3 = await input('Kérek egy számot: ');
+
+function haromszog_e() {
+    if (s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) {
+        return "Háromszög!";
+    }
+    return "Nem háromszög!";
+}
+console.log(haromszog_e());
+
 /* console.log(add(sz1, sz2));
 console.log(kivonas(sz1, sz2));
 console.log(szorzas(sz1, sz2));
